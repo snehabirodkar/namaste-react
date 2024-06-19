@@ -34,17 +34,17 @@ The purpose of crossorigin attribute is used to share the resources from one dom
 <script crossorigin="anonymous|use-credentials">
 ```
 
-## Q: What is difference between `React and ReactDOM`?
+## Q: What is difference between React and ReactDOM?
 
 A: `React` is a JavaScript library for building User Interfaces whereas `ReactDOM` is also JavaScript library that allows `React to interact with the DOM`.
 The react package contains `React.createElement()`, `React.Component`, `React.Children`, and other helpers related to elements and component classes. You can think of these as the isomorphic or universal helpers that you need to build components. The react-dom package contains `ReactDOM.render()`, and in react-dom/server we have server-side rendering support with `ReactDOMServer.renderToString()` and `ReactDOMServer.renderToStaticMarkup()`.
 
-## Q: What is difference between `react.development.js` and `react.production.js` files via `CDN`?
+## Q: What is difference between react.development.js and react.production.js files via CDN?
 
 A: `Development` is the stage of an application before it's made public while `production` is the term used for the same application when it's made `public`.
 `Development build` is several times (maybe 3-5x) `slower` than the `production build`.
 
-## Q: What is `async and defer`?
+## Q: What is async and defer?
 
 A: `Async` - The async attribute is a `boolean attribute`. The script is downloaded in `parallel(in the background)` to parsing the page, and `executed as soon` as it is available (do not block HTML DOM construction during downloading process) and don’t wait for anything.
 
