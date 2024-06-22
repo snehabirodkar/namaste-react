@@ -18,6 +18,7 @@ npm init
 A: `Parcel/Webpack` is type of a web application bundler used for development and productions purposes or power our application with different type functionalities and features.
 It offers blazing fast performance utilizing multicore processing, and requires zero configuration. Parcel can take any type of file as an entry point, but an HTML or JavaScript file is a good place to start.
 Parcel/Webpack are type of bundlers that we use to power our application with different type functionalities and features.
+[Parcel Documentation](https://parceljs.org/getting-started/webapp/)
 
 ### Parcel Features:
 * HMR (Hot Module Replacement) - parcel keeps track of file changes via file watcher algorithm and renders the changes in the files
