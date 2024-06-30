@@ -1,9 +1,12 @@
-## Session #4 of Namaste React course:
+# Session 4 of Namaste React course:
 
-### Topics covered in this session:
+## Topics covered in this session:
 
-- Header
-  - Logo
-  - Nav items
-- Body - Search - Restraunt Container - Restraunt card
-  -Footer - Copyright - Links - Address - Contact
+- Creating our first app
+- React Fragment
+- props
+- Config driven UI
+- Virtual DOM
+- React reconciliation
+
+Application: [here](https://hilarious-crumble-916bc6.netlify.app/)
