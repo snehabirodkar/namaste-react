@@ -19,7 +19,6 @@ export const Body = () => {
     <div className="body">
       <div className="d-flex">
         <div className="search">
-          Search
           <input
             type="text"
             placeholder="search resto"
@@ -32,6 +31,7 @@ export const Body = () => {
             className="search-btn"
             onClick={() => {
               // filter the data
+
               const data = filterData(searchText, restaurantList);
               // update the state of restaurants list
               setListOfRestraunt(data);
