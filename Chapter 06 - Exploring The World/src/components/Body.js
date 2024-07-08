@@ -1,19 +1,28 @@
 import RestaurantCard from "./RestaurantCard";
-import resLis from "../utils/mockData";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Body = () => {
-  const [restaurantList, setListOfRestraunt] = useState(resLis);
+  const [restaurantList, setListOfRestraunt] = useState([]);
   const [searchText, setSearchRestaurant] = useState("");
-  // Its array destructuring
 
-  // const restaurantList = arr[0];
-  // const setListOfRestraunt = arr[1];
-  function filterData(searchText, restaurants) {
-    const filterData = restaurants.filter((restaurant) =>
-      restaurant?.data?.name.toLowerCase().includes(searchText.toLowerCase())
+  useEffect(() => {
+    console.log("UseEffect called");
+    fetchData();
+  }, []);
+  fetchData = async () => {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.9974533&lng=73.78980229999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
-    return filterData;
+
+    const json = await data.json();
+
+    console.log(json);
+    setListOfRestraunt(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+  };
+  if (restaurantList.length === 0) {
+    return <h1>Loading.....</h1>;
   }
   return (
     <div className="body">
@@ -28,13 +37,12 @@ export const Body = () => {
             }}
           />
           <button
-            className="search-btn"
+            className="serach-btn"
             onClick={() => {
-              // filter the data
-
-              const data = filterData(searchText, restaurantList);
-              // update the state of restaurants list
-              setListOfRestraunt(data);
+              const FilteredRes = listOfResturant.filter((res) =>
+                res.info.name.toLowerCase().includes(searchText.toLowerCase())
+              );
+              setSearchRestaurant(FilteredRes);
             }}>
             Search
           </button>
@@ -46,15 +54,14 @@ export const Body = () => {
               (data) => data.data.avgRating > 4
             );
             setListOfRestraunt(filteredList);
-            console.log(filteredList);
           }}>
           Top Rated
         </button>
       </div>
       <div className="rest-container">
-        {restaurantList.map((x) => (
+        {restaurantList.map((x, index) => (
           <RestaurantCard
-            key={x.data.id}
+            key={index}
             resData={x}
           />
         ))}
