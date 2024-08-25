@@ -1,0 +1,68 @@
+.d-flex {
+  display: flex;
+  margin: 20px 0;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  border: solid 1px black;
+}
+
+.logo {
+  width: 100px;
+}
+.nav-list {
+  padding: 0px 20px;
+}
+.nav-list > ul {
+  display: flex;
+  font-size: 18px;
+  list-style-type: none;
+}
+
+.nav-list > ul > li {
+  padding: 10px;
+  margin: 10px;
+}
+.cardWrapper {
+  width: 220px;
+  padding: 10px;
+  margin: 20px;
+}
+.cardWrapper:hover {
+  border: solid 1px black;
+}
+.rest-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content:; */
+}
+.search {
+  padding: 10px;
+}
+.img-wrapper {
+  width: 100%;
+  height: 120px;
+  border-radius: 20px;
+}
+.footer {
+  height: 40px;
+  background-color: bisque;
+}
+.bg-color {
+  backgroundcolor: "#dfdfe7";
+}
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.shimmer-card {
+  margin: 20px;
+  width: 280px;
+  height: 400px;
+  background-color: #ccc;
+}
+.login-btn {
+  padding: 0 20px;
+  cursor: pointer;
+}
