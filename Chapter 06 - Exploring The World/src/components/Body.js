@@ -1,5 +1,6 @@
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
+import Shimmer from "./Shimmer";
 
 export const Body = () => {
   const [restaurantList, setListOfRestraunt] = useState([]);
@@ -21,10 +22,13 @@ export const Body = () => {
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
-  if (restaurantList.length === 0) {
-    return <h1>Loading.....</h1>;
-  }
-  return (
+  //conditional rendering
+  // if (restaurantList.length === 0) {
+  //   return <Shimmer />;
+  // }
+  return restaurantList.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
       <div className="d-flex">
         <div className="search">
